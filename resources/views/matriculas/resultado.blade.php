@@ -46,7 +46,7 @@
                         </div>
 
                         <div class="mt-4">
-                            <a href="{{ route('license-plate.index') }}" class="btn btn-primary">
+                            <a href="{{ route('matricula.index') }}" class="btn btn-primary">
                                 Analizar otra imagen
                             </a>
                         </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use Google\Cloud\Vision\V1\Client\ImageAnnotatorClient;
 use Illuminate\Http\Request;
 use Google\Cloud\Vision\V1\Feature\Type;
@@ -15,7 +16,7 @@ class LicensePlateController extends Controller
      */
     public function index()
     {
-        return view('license-plate.index');
+        return view('matriculas.index');
     }
 
     /**
@@ -71,12 +72,12 @@ class LicensePlateController extends Controller
             // Extraer posible matrícula usando expresiones regulares
             $licensePlate = $this->extractLicensePlate($detectedText);
 
-            return view('license-plate.result', [
+            return view('matriculas.resultado', [
                 'imagePath' => $imagePath,
                 'detectedText' => $detectedText,
                 'licensePlate' => $licensePlate
             ]);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             return back()->withErrors('Error: ' . $e->getMessage());
         }
     }
@@ -88,6 +89,9 @@ class LicensePlateController extends Controller
     {
         // Eliminar saltos de línea para procesamiento
         $text = str_replace(["\r", "\n"], ' ', $text);
+
+        // Eliminar todos los espacios en blanco
+        $text = str_replace(' ', '', $text);
 
         // Patrón para matrículas españolas
         // Formato: 0000 AAA o AA 0000 AA

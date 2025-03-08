@@ -8,6 +8,16 @@ Cuenta en Google Cloud Platform
 Laravel 10
 Extensiones PHP: gd, fileinfo, curl
 
+# Documentación Google Cloud Vision
+
+https://cloud.google.com/php/docs/reference/cloud-vision/latest
+
+https://github.com/googleapis/google-cloud-php/tree/main/Vision
+
+https://cloud.google.com/vision/docs?hl=es-419
+
+https://cloud.google.com/php/docs/reference (librerías PHP)
+
 # Crear el Proyecto
 
 composer create-project --prefer-dist laravel/laravel reconocimiento-matriculas "10.0"
@@ -43,7 +53,7 @@ composer create-project --prefer-dist laravel/laravel reconocimiento-matriculas 
 php artisan serve
 
 2. Acceder a la Aplicación
-Abre tu navegador y visita: http://localhost:8000/license-plate
+Abre tu navegador y visita: http://localhost:8000
 
 # Cómo Usar la Aplicación
 

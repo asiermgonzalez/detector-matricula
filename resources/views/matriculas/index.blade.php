@@ -33,7 +33,7 @@
                             </div>
                         @endif
 
-                        <form action="{{ route('license-plate.process') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('matricula.procesar') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-3">
                                 <label for="image" class="form-label">Selecciona una imagen de un vehículo</label>
